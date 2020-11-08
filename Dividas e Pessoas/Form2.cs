@@ -10,8 +10,21 @@ using System.Windows.Forms;
 
 namespace Dividas_e_Pessoas
 {
+    
     public partial class Form2 : Form
     {
+        String nomePessoa;
+        String telefonePessoa;
+        String celPessoa;
+        String enderecoPessoa;
+        String numEndereco;
+        String compEndereco;
+        String bairroEndereco;
+        String divida;
+        String parcelas;
+        String parcelasPagas;
+        String observ;
+
         public Form2()
         {
             InitializeComponent();
@@ -26,16 +39,17 @@ namespace Dividas_e_Pessoas
         private void button1_Click(object sender, EventArgs e)
         {
 
-            String nomePessoa = textBoxNomePessoa.Text;
-            String telefonePessoa = textBoxNumTelefone.Text;
-            String celPessoa = textBoxNumCelular.Text;
-            String enderecoPessoa = textBoxEndereco.Text;
-            String numEndereco = textBoxEnderecoNum.Text;
-            String compEndereco = textBoxEnderecoComp.Text;
-            String divida = textBoxDivida.Text;
-            String parcelas = textBoxParcelas.Text;
-            String parcelasPagas = textBoxParcelasPagas.Text;
-            String observ = richTextBoxObservacao.Text;
+            nomePessoa = textBoxNomePessoa.Text;
+            telefonePessoa = textBoxNumTelefone.Text;
+            celPessoa = textBoxNumCelular.Text;
+            enderecoPessoa = textBoxEndereco.Text;
+            numEndereco = textBoxEnderecoNum.Text;
+            compEndereco = textBoxEnderecoComp.Text;
+            bairroEndereco = textBoxEnderecoBairro.Text;
+            divida = textBoxDivida.Text;
+            parcelas = textBoxParcelas.Text;
+            parcelasPagas = textBoxParcelasPagas.Text;
+            observ = richTextBoxObservacao.Text;
 
             MessageBox.Show(nomePessoa + "\n" + telefonePessoa + "\n" + celPessoa + "\n" + enderecoPessoa + "\n" + numEndereco + "\n" + divida, "Teste");
         }
