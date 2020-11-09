@@ -35,11 +35,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.carregarLista = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.banco_dadosDataSet = new Dividas_e_Pessoas.banco_dadosDataSet();
             this.bancodadosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.banco_dadosDataSet = new Dividas_e_Pessoas.banco_dadosDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banco_dadosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodadosDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banco_dadosDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -87,6 +87,7 @@
             this.carregarLista.TabIndex = 4;
             this.carregarLista.Text = "Carregar Lista";
             this.carregarLista.UseVisualStyleBackColor = true;
+            this.carregarLista.Click += new System.EventHandler(this.carregarLista_Click);
             // 
             // dataGridView1
             // 
@@ -98,15 +99,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(398, 342);
             this.dataGridView1.TabIndex = 5;
             // 
-            // banco_dadosDataSet
-            // 
-            this.banco_dadosDataSet.DataSetName = "banco_dadosDataSet";
-            this.banco_dadosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bancodadosDataSetBindingSource
             // 
             this.bancodadosDataSetBindingSource.DataSource = this.banco_dadosDataSet;
             this.bancodadosDataSetBindingSource.Position = 0;
+            // 
+            // banco_dadosDataSet
+            // 
+            this.banco_dadosDataSet.DataSetName = "banco_dadosDataSet";
+            this.banco_dadosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Form1
             // 
@@ -122,8 +123,8 @@
             this.Name = "Form1";
             this.Text = "Dividas e Pessoas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banco_dadosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodadosDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banco_dadosDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,21 @@ namespace Dividas_e_Pessoas
 {
     public partial class Form1 : Form
     {
+        SqlConnection conBd;
+        SqlCommand comando;
+        SqlDataAdapter dataAdapter;
+        SqlDataReader dataReader;
+
+        string stringSql;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,6 +49,14 @@ namespace Dividas_e_Pessoas
             
         }
 
-       
+        private void carregarLista_Click(object sender, EventArgs e)
+        {
+            conBd = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" +
+                                      @"AttachDbFilename=C:\dados\banco_dados.mdf;" +
+                                      "Integrated Security=False;" +
+                                      "Connect Timeout=30");
+            stringSql = "INSERT INTO Pessoas (nome,telefone,celular,endereco,divida,parcelas,parcelas_pagas,observacao)";
+            
+        }
     }
 }
