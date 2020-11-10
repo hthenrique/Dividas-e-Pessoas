@@ -64,12 +64,9 @@ namespace Dividas_e_Pessoas
 
             try
             {
-                conBd = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" +
-                                          @"AttachDbFilename=C:\dados\banco_dados.mdf;" +
-                                          "Integrated Security=False;" +
-                                          "Connect Timeout=30");
-                stringSql = "INSERT INTO Pessoas (nome,telefone,celular,endereco,divida,parcelas,parcelas_pagas,observacao " +
-                    "VALUES @NOME, @TELEFONE, @CELULAR, @ENDERECO, @DIVIDA, @PARCELAS, @PARCELASPAGAS, @OBSERVACAO )";
+                conBd = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dados\banco_dados.mdf;Integrated Security=True;Connect Timeout=30");
+                stringSql = "INSERT INTO Pessoas (nome,telefone,celular,endereco,divida,parcelas,parcelas_pagas,observacao) " +
+                    "VALUES (@NOME, @TELEFONE, @CELULAR, @ENDERECO, @DIVIDA, @PARCELAS, @PARCELASPAGAS, @OBSERVACAO)";
 
                 comando = new SqlCommand(stringSql, conBd);
 

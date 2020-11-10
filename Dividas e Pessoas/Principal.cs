@@ -43,7 +43,7 @@ namespace Dividas_e_Pessoas
             //Mostrar caixa de mensagem de ajuda
                 MessageBox.Show("Visualizar ou Editar Pessoa: " +
                     "\nPara visualizar a pessoa cadastrada, clique duas vezes sobre o nome dela, será aberto uma janela com as informações salvas." +
-                    "Na mesma tela é possivel atualizar os \n" +
+                    "Na mesma tela é possivel atualizar os cadastros\n" +
                     "\nImprimir lista de pessoas: " +
                     "\nPara imprimir a lista inteira de pessoas clique no botão 'Imprimir lista' ", "Ajuda");
             
