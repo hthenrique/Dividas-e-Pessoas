@@ -31,17 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNomePessoa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNumTelefone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxNumCelular = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxEndereco = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxEnderecoNum = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxEnderecoComp = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxEnderecoBairro = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxDivida = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,6 +44,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.numCelular = new System.Windows.Forms.MaskedTextBox();
+            this.numTelefone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -66,6 +60,7 @@
             // textBoxNomePessoa
             // 
             this.textBoxNomePessoa.Location = new System.Drawing.Point(12, 31);
+            this.textBoxNomePessoa.MaxLength = 100;
             this.textBoxNomePessoa.Name = "textBoxNomePessoa";
             this.textBoxNomePessoa.Size = new System.Drawing.Size(367, 20);
             this.textBoxNomePessoa.TabIndex = 1;
@@ -79,28 +74,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Telefone";
             // 
-            // textBoxNumTelefone
-            // 
-            this.textBoxNumTelefone.Location = new System.Drawing.Point(12, 81);
-            this.textBoxNumTelefone.Name = "textBoxNumTelefone";
-            this.textBoxNumTelefone.Size = new System.Drawing.Size(171, 20);
-            this.textBoxNumTelefone.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(190, 64);
+            this.label3.Location = new System.Drawing.Point(123, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Celular";
-            // 
-            // textBoxNumCelular
-            // 
-            this.textBoxNumCelular.Location = new System.Drawing.Point(193, 81);
-            this.textBoxNumCelular.Name = "textBoxNumCelular";
-            this.textBoxNumCelular.Size = new System.Drawing.Size(186, 20);
-            this.textBoxNumCelular.TabIndex = 5;
             // 
             // label4
             // 
@@ -114,62 +95,15 @@
             // textBoxEndereco
             // 
             this.textBoxEndereco.Location = new System.Drawing.Point(12, 136);
+            this.textBoxEndereco.MaxLength = 100;
             this.textBoxEndereco.Name = "textBoxEndereco";
             this.textBoxEndereco.Size = new System.Drawing.Size(367, 20);
             this.textBoxEndereco.TabIndex = 7;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Número";
-            // 
-            // textBoxEnderecoNum
-            // 
-            this.textBoxEnderecoNum.Location = new System.Drawing.Point(12, 189);
-            this.textBoxEnderecoNum.Name = "textBoxEnderecoNum";
-            this.textBoxEnderecoNum.Size = new System.Drawing.Size(171, 20);
-            this.textBoxEnderecoNum.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(190, 172);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Complemento";
-            // 
-            // textBoxEnderecoComp
-            // 
-            this.textBoxEnderecoComp.Location = new System.Drawing.Point(193, 188);
-            this.textBoxEnderecoComp.Name = "textBoxEnderecoComp";
-            this.textBoxEnderecoComp.Size = new System.Drawing.Size(186, 20);
-            this.textBoxEnderecoComp.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 227);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Bairro";
-            // 
-            // textBoxEnderecoBairro
-            // 
-            this.textBoxEnderecoBairro.Location = new System.Drawing.Point(12, 244);
-            this.textBoxEnderecoBairro.Name = "textBoxEnderecoBairro";
-            this.textBoxEnderecoBairro.Size = new System.Drawing.Size(367, 20);
-            this.textBoxEnderecoBairro.TabIndex = 13;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 283);
+            this.label8.Location = new System.Drawing.Point(9, 181);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 13);
             this.label8.TabIndex = 14;
@@ -177,7 +111,8 @@
             // 
             // textBoxDivida
             // 
-            this.textBoxDivida.Location = new System.Drawing.Point(12, 300);
+            this.textBoxDivida.Location = new System.Drawing.Point(9, 198);
+            this.textBoxDivida.MaxLength = 20;
             this.textBoxDivida.Name = "textBoxDivida";
             this.textBoxDivida.Size = new System.Drawing.Size(121, 20);
             this.textBoxDivida.TabIndex = 15;
@@ -185,7 +120,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(190, 283);
+            this.label9.Location = new System.Drawing.Point(187, 181);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 13);
             this.label9.TabIndex = 16;
@@ -193,7 +128,8 @@
             // 
             // textBoxParcelas
             // 
-            this.textBoxParcelas.Location = new System.Drawing.Point(193, 299);
+            this.textBoxParcelas.Location = new System.Drawing.Point(190, 197);
+            this.textBoxParcelas.MaxLength = 10;
             this.textBoxParcelas.Name = "textBoxParcelas";
             this.textBoxParcelas.Size = new System.Drawing.Size(100, 20);
             this.textBoxParcelas.TabIndex = 17;
@@ -201,7 +137,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(190, 327);
+            this.label10.Location = new System.Drawing.Point(187, 225);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 13);
             this.label10.TabIndex = 18;
@@ -209,23 +145,24 @@
             // 
             // textBoxParcelasPagas
             // 
-            this.textBoxParcelasPagas.Location = new System.Drawing.Point(193, 343);
+            this.textBoxParcelasPagas.Location = new System.Drawing.Point(190, 241);
+            this.textBoxParcelasPagas.MaxLength = 10;
             this.textBoxParcelasPagas.Name = "textBoxParcelasPagas";
             this.textBoxParcelasPagas.Size = new System.Drawing.Size(100, 20);
             this.textBoxParcelasPagas.TabIndex = 19;
             // 
             // richTextBoxObservacao
             // 
-            this.richTextBoxObservacao.Location = new System.Drawing.Point(15, 388);
+            this.richTextBoxObservacao.Location = new System.Drawing.Point(12, 286);
             this.richTextBoxObservacao.Name = "richTextBoxObservacao";
-            this.richTextBoxObservacao.Size = new System.Drawing.Size(364, 176);
+            this.richTextBoxObservacao.Size = new System.Drawing.Size(364, 299);
             this.richTextBoxObservacao.TabIndex = 20;
             this.richTextBoxObservacao.Text = "";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 372);
+            this.label11.Location = new System.Drawing.Point(15, 270);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 13);
             this.label11.TabIndex = 21;
@@ -233,7 +170,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(304, 591);
+            this.button1.Location = new System.Drawing.Point(301, 591);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;
@@ -243,18 +180,38 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(218, 591);
+            this.button2.Location = new System.Drawing.Point(215, 591);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 23;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // numCelular
+            // 
+            this.numCelular.Location = new System.Drawing.Point(126, 80);
+            this.numCelular.Mask = "(99) 00000-0000";
+            this.numCelular.Name = "numCelular";
+            this.numCelular.Size = new System.Drawing.Size(100, 20);
+            this.numCelular.TabIndex = 24;
+            this.numCelular.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // numTelefone
+            // 
+            this.numTelefone.Location = new System.Drawing.Point(12, 80);
+            this.numTelefone.Mask = "(99) 0000-0000";
+            this.numTelefone.Name = "numTelefone";
+            this.numTelefone.Size = new System.Drawing.Size(100, 20);
+            this.numTelefone.TabIndex = 25;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 626);
+            this.ClientSize = new System.Drawing.Size(389, 626);
+            this.Controls.Add(this.numTelefone);
+            this.Controls.Add(this.numCelular);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label11);
@@ -265,20 +222,14 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxDivida);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxEnderecoBairro);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxEnderecoComp);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxEnderecoNum);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxEndereco);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxNumCelular);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxNumTelefone);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNomePessoa);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(405, 665);
+            this.MinimumSize = new System.Drawing.Size(405, 665);
             this.Name = "Form2";
             this.Text = "Cadastrar nova pessoa";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -292,17 +243,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNomePessoa;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxNumTelefone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxNumCelular;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxEndereco;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxEnderecoNum;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxEnderecoComp;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxEnderecoBairro;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxDivida;
         private System.Windows.Forms.Label label9;
@@ -313,5 +256,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox numCelular;
+        private System.Windows.Forms.MaskedTextBox numTelefone;
     }
 }

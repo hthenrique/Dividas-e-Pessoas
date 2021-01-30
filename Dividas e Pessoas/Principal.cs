@@ -13,13 +13,6 @@ namespace Dividas_e_Pessoas
 {
     public partial class Form1 : Form
     {
-        SqlConnection conBd;
-        SqlCommand comando;
-        SqlDataAdapter dataAdapter;
-        SqlDataReader dataReader;
-
-        string stringSql;
-
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +21,8 @@ namespace Dividas_e_Pessoas
         private void Principal_Load(object sender, EventArgs e)
         {
             
+            BancoDadosHelper bdHelper = new BancoDadosHelper();
+            listaPessoas.DataSource = bdHelper.consultarBanco();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,14 +44,37 @@ namespace Dividas_e_Pessoas
             
         }
 
-        private void carregarLista_Click(object sender, EventArgs e)
+        private void atualizarLista_Click(object sender, EventArgs e)
         {
-            conBd = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" +
-                                      @"AttachDbFilename=C:\dados\banco_dados.mdf;" +
-                                      "Integrated Security=False;" +
-                                      "Connect Timeout=30");
-            stringSql = "INSERT INTO Pessoas (nome,telefone,celular,endereco,divida,parcelas,parcelas_pagas,observacao)";
+            BancoDadosHelper bdHelper = new BancoDadosHelper();
+            listaPessoas.DataSource = bdHelper.consultarBanco();
+        }
+
+        public static DataGridViewRow selectedRow { get; set; }
+        private void editarPessoa(object sender, DataGridViewCellEventArgs e)
+        {
             
+         
+            listaPessoas.CurrentRow.Selected = true;
+
+            string id = listaPessoas.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+            string nome = listaPessoas.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+            string telefone = listaPessoas.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+            string celular = listaPessoas.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+            string endereco = listaPessoas.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+            string divida = listaPessoas.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
+            string parcelas = listaPessoas.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
+            string parcelas_pagas = listaPessoas.Rows[e.RowIndex].Cells[7].FormattedValue.ToString();
+            string observacao = listaPessoas.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+
+            Editar_Pessoa editar_Pessoa = new Editar_Pessoa(id, nome, telefone, celular, endereco, divida, parcelas, parcelas_pagas, observacao);
+            editar_Pessoa.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
